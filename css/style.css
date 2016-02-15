@@ -1,0 +1,162 @@
+@font-face {
+    font-family: "Droid Sans"; /* Гарнитура шрифта */
+    src: url(../fonts/Droid%20Sans.ttf); /* Путь к файлу со шрифтом */
+   }
+@font-face {
+    font-family: Quicksand Bold ; /* Гарнитура шрифта */
+    src: url(../fonts/Quicksand_Bold.otf); /* Путь к файлу со шрифтом */
+   }
+@font-face {
+    font-family: Quicksand Book ; /* Гарнитура шрифта */
+    src: url(../fonts/Quicksand_Book.otf); /* Путь к файлу со шрифтом */
+   }
+@font-face {
+    font-family: Quicksand Light ; /* Гарнитура шрифта */
+    src: url(../fonts/Quicksand_Light.otf); /* Путь к файлу со шрифтом */
+   }
+@font-face {
+    font-family:"AR DECODE" ; /* Гарнитура шрифта */
+    src: url(../fonts/ARDECODE.ttf); /* Путь к файлу со шрифтом */
+   }
+header{
+    background-image: url("../img/nav_bg.jpg");
+}
+.logo{
+
+}
+.navbar-default{
+    font-family: "Droid Sans";
+    background-image: url("../img/nav_bg.jpg");
+    border-radius: 0px;
+    border: none;
+    position: relative;
+    height: 5vh;
+}
+.navbar-default .navbar-nav>li>a {
+    top: 10px;
+    background-color: transparent;
+
+}
+.navbar-default .navbar-nav>li>a:hover {
+
+    background-image: url("../img/button_bg_hover.jpg");
+}
+.navbar-brand {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+.header_body{
+    background-image: url("../img/header_body_bg.jpg");
+    height: 80vh;
+}
+.text_header{
+    top: 50px;
+}
+.first_row{
+    font-family: Quicksand Bold;
+    color: white;
+}
+.first_row2{
+    font-family: "Quicksand Book";
+    color: white;
+}
+.white{
+    color: white;
+}
+.black{
+    color: black;
+}
+.second_row{
+    font-family: "Droid Sans" ;
+    font-size: 50pt;
+}
+.third_row{
+    font-family: "Quicksand Book";
+}
+.booking_form{
+    height: 100px;
+    top: -50px;
+    font-family: "Quicksand Light";
+    background-color: #2A2E33;
+
+}
+.form_text{
+    color: yellow;
+}
+.data{
+    border-radius: 5px;
+}
+.hidden_text{
+    color: transparent;
+}
+.btn-warning{
+    border-color: transparent;
+    background-color: yellow;
+}
+.carousel_header{
+    font-family: "AR DECODE";
+    font-size: 40pt;
+}
+.carousel_text{
+    font-family: Quicksand;
+}
+.carousel_slider{
+    height: 300px;
+    width: 100%;
+
+}
+.room_types{
+
+    height: 977px;
+    background: url("../img/room_types_bg.jpg") center;
+}
+.room_types_img{
+    top: 100px;
+}
+.room_types_header{
+    font-family: "Quicksand Book";
+
+}
+.room_types_text{
+    font-family: "Quicksand Book";
+}
+.room_types_footer{
+    top: 300px;
+}
+.room_types_footer_header{
+    color: white;
+    font-family: "Quicksand Book";
+
+}
+.room_types_footer_text{
+    color: white;
+    font-family: "Quicksand Book";
+}
+footer{
+    background-image: url("../img/footer_bg.jpg");
+}
+.footer_header{
+    color: white;
+    font-family: "Droid Sans";
+}
+.footer_text{
+    color: white;
+    font-family: "Quicksand Book";
+}
+.btn-success{
+    background-color: #fffb36;
+    color: #0f0f0f;
+    border-color: transparent;
+
+}
+.input_footer{
+    background-color: transparent;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    color: white;
+}
+.footer_label{
+    font-family: "Quicksand Book";
+    color: white;
+}

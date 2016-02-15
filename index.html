@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <title>Hotel</title>
+
+    <link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+
+  </head>
+  <body>
+  <script type="text/javascript" src="js/jssor.slider.min.js"></script>
+      <!-- use jssor.slider.debug.js instead for debug -->
+      <script>
+          jssor_1_slider_init = function() {
+
+              var jssor_1_SlideshowTransitions = [
+                {$Duration:1200,x:0.2,y:-0.1,$Delay:20,$Cols:8,$Rows:4,$Clip:15,$During:{$Left:[0.3,0.7],$Top:[0.3,0.7]},$Formation:$JssorSlideshowFormations$.$FormationStraightStairs,$Assembly:260,$Easing:{$Left:$Jease$.$InWave,$Top:$Jease$.$InWave,$Clip:$Jease$.$OutQuad},$Outside:true,$Round:{$Left:1.3,$Top:2.5}},
+                {$Duration:1500,x:0.3,y:-0.3,$Delay:20,$Cols:8,$Rows:4,$Clip:15,$During:{$Left:[0.1,0.9],$Top:[0.1,0.9]},$SlideOut:true,$Formation:$JssorSlideshowFormations$.$FormationStraightStairs,$Assembly:260,$Easing:{$Left:$Jease$.$InJump,$Top:$Jease$.$InJump,$Clip:$Jease$.$OutQuad},$Outside:true,$Round:{$Left:0.8,$Top:2.5}},
+                {$Duration:1500,x:0.2,y:-0.1,$Delay:20,$Cols:8,$Rows:4,$Clip:15,$During:{$Left:[0.3,0.7],$Top:[0.3,0.7]},$Formation:$JssorSlideshowFormations$.$FormationStraightStairs,$Assembly:260,$Easing:{$Left:$Jease$.$InWave,$Top:$Jease$.$InWave,$Clip:$Jease$.$OutQuad},$Outside:true,$Round:{$Left:0.8,$Top:2.5}},
+                {$Duration:1500,x:0.3,y:-0.3,$Delay:80,$Cols:8,$Rows:4,$Clip:15,$During:{$Left:[0.3,0.7],$Top:[0.3,0.7]},$Easing:{$Left:$Jease$.$InJump,$Top:$Jease$.$InJump,$Clip:$Jease$.$OutQuad},$Outside:true,$Round:{$Left:0.8,$Top:2.5}},
+                {$Duration:1800,x:1,y:0.2,$Delay:30,$Cols:10,$Rows:5,$Clip:15,$During:{$Left:[0.3,0.7],$Top:[0.3,0.7]},$SlideOut:true,$Reverse:true,$Formation:$JssorSlideshowFormations$.$FormationStraightStairs,$Assembly:2050,$Easing:{$Left:$Jease$.$InOutSine,$Top:$Jease$.$OutWave,$Clip:$Jease$.$InOutQuad},$Outside:true,$Round:{$Top:1.3}},
+                {$Duration:1000,$Delay:30,$Cols:8,$Rows:4,$Clip:15,$SlideOut:true,$Formation:$JssorSlideshowFormations$.$FormationStraightStairs,$Assembly:2049,$Easing:$Jease$.$OutQuad},
+                {$Duration:1000,$Delay:80,$Cols:8,$Rows:4,$Clip:15,$SlideOut:true,$Easing:$Jease$.$OutQuad},
+                {$Duration:1000,y:-1,$Cols:12,$Formation:$JssorSlideshowFormations$.$FormationStraight,$ChessMode:{$Column:12}},
+                {$Duration:1000,x:-0.2,$Delay:40,$Cols:12,$SlideOut:true,$Formation:$JssorSlideshowFormations$.$FormationStraight,$Assembly:260,$Easing:{$Left:$Jease$.$InOutExpo,$Opacity:$Jease$.$InOutQuad},$Opacity:2,$Outside:true,$Round:{$Top:0.5}},
+                {$Duration:2000,y:-1,$Delay:60,$Cols:15,$SlideOut:true,$Formation:$JssorSlideshowFormations$.$FormationStraight,$Easing:$Jease$.$OutJump,$Round:{$Top:1.5}}
+              ];
+
+              var jssor_1_options = {
+                $AutoPlay: true,
+                $SlideshowOptions: {
+                  $Class: $JssorSlideshowRunner$,
+                  $Transitions: jssor_1_SlideshowTransitions,
+                  $TransitionsOrder: 1
+                },
+                $ArrowNavigatorOptions: {
+                  $Class: $JssorArrowNavigator$
+                },
+                $BulletNavigatorOptions: {
+                  $Class: $JssorBulletNavigator$
+                }
+              };
+
+              var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+              //responsive code begin
+              //you can remove responsive code if you don't want the slider scales while window resizing
+              function ScaleSlider() {
+                  var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+                  if (refSize) {
+                      refSize = Math.min(refSize, 600);
+                      jssor_1_slider.$ScaleWidth(refSize);
+                  }
+                  else {
+                      window.setTimeout(ScaleSlider, 30);
+                  }
+              }
+              ScaleSlider();
+              $Jssor$.$AddEvent(window, "load", ScaleSlider);
+              $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+              $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+              //responsive code end
+          };
+      </script>
+
+      <style>
+
+          /* jssor slider bullet navigator skin 01 css */
+          /*
+          .jssorb01 div           (normal)
+          .jssorb01 div:hover     (normal mouseover)
+          .jssorb01 .av           (active)
+          .jssorb01 .av:hover     (active mouseover)
+          .jssorb01 .dn           (mousedown)
+          */
+          .jssorb01 {
+              position: absolute;
+          }
+          .jssorb01 div, .jssorb01 div:hover, .jssorb01 .av {
+              position: absolute;
+              /* size of bullet elment */
+              width: 12px;
+              height: 12px;
+              filter: alpha(opacity=70);
+              opacity: .7;
+              overflow: hidden;
+              cursor: pointer;
+              border: #000 1px solid;
+          }
+          .jssorb01 div { background-color: gray; }
+          .jssorb01 div:hover, .jssorb01 .av:hover { background-color: #d3d3d3; }
+          .jssorb01 .av { background-color: #fff; }
+          .jssorb01 .dn, .jssorb01 .dn:hover { background-color: #555555; }
+
+          /* jssor slider arrow navigator skin 05 css */
+          /*
+          .jssora05l                  (normal)
+          .jssora05r                  (normal)
+          .jssora05l:hover            (normal mouseover)
+          .jssora05r:hover            (normal mouseover)
+          .jssora05l.jssora05ldn      (mousedown)
+          .jssora05r.jssora05rdn      (mousedown)
+          */
+          .jssora05l, .jssora05r {
+              display: block;
+              position: absolute;
+              /* size of arrow element */
+              width: 40px;
+              height: 100px;
+              cursor: pointer;
+              background: url('img/a17.png') no-repeat;
+              overflow: hidden;
+          }
+          .jssora05l { background-position: -10px -40px; }
+          .jssora05r { background-position: -70px -40px; }
+          .jssora05l:hover { background-position: -130px -40px; }
+          .jssora05r:hover { background-position: -190px -40px; }
+          .jssora05l.jssora05ldn { background-position: -250px -40px; }
+          .jssora05r.jssora05rdn { background-position: -310px -40px; }
+      </style>
+<header>
+  <div class="container">
+      <div class="row">
+          <div class=" col-xs-12 col-sm-12">
+            <nav class="navbar navbar-default" role="navigation">
+            	<!-- Brand and toggle get grouped for better mobile display -->
+            	<div class="navbar-header">
+            		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            			<span class="sr-only">Toggle navigation</span>
+            			<span class="icon-bar"></span>
+            			<span class="icon-bar"></span>
+            			<span class="icon-bar"></span>
+            		</button>
+            		<a class="navbar-brand" href="#"><img src="img/logo.jpg" style="max-width: 100%; height: auto;"> </a>
+            	</div>
+
+            	<!-- Collect the nav links, forms, and other content for toggling -->
+            	<div class="collapse navbar-collapse navbar-ex1-collapse">
+            		<ul class="nav navbar-nav navbar-right">
+                      <li><a href="#">Start</a></li>
+                      <li><a href="#">Facilities</a></li>
+                      <li><a href="#">Restaurant</a></li>
+                      <li><a href="#">Conference</a></li>
+                      <li><a href="#">Bookings</a></li>
+                      <li><a href="#">Contact Us</a></li>
+            		</ul>
+            	</div><!-- /.navbar-collapse -->
+            </nav>
+
+          </div>
+      </div>
+  </div>
+  <div class="container-fluid header_body" align="center">
+      <div class="row">
+          <div class="col-xs-12 text_header">
+              <h2 class="first_row2"><b class="first_row">Hello,</b> You've Reached</h2>
+            <h2 class="white">................................................................</h2>
+            <p class="second_row white"><b>HOTEL DELUXE</b></p>
+            <h2 class="white">.....................................................</h2>
+            <h2 class="white third_row">HOTEL - SPA SALOON - FINE DINING</h2>
+          </div>
+      </div>
+  </div>
+
+  </div>
+</header>
+<section>
+
+<div class="container">
+      <div class="row">
+          <div class="col-xs-12  booking_form">
+            <div class="form-horizontal">
+              <div class="row">
+                <div class="col-xs-3">
+              <label class="form_text"><h4>Arrival</h4></label><br/>
+              <input type="date" class="data">
+                </div>
+                <div class="col-xs-3">
+                  <label class="form_text"><h4>Departure</h4></label><br/>
+                  <input type="date" class="data">
+                </div>
+                <div class="col-xs-3">
+                  <label class="form_text"><h4>Room Type</h4></label><br/>
+                  <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                      Standard single type
+                      <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                      <li class="active"><a href="#">Standard single type</a></li>
+                      <li><a href="#">Standard single type</a></li>
+                      <li><a href="#">Something else here</a></li>
+                      <li><a href="#">Standard single type</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-xs-3">
+                  <label class="form_text hidden_text"><h4>a</h4></label><br/>
+                    <div class="btn btn-warning black">View Prices</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section>
+  <div class="container-fluid" align="center">
+      <div class="row" >
+          <div class="col-xs-8 col-xs-offset-2"   >
+              <h1 class="carousel_header">Book A Package</h1>
+            <h4 class="carousel_text">Sed euismod sem id consequat rutrum. Ut convallis lorem a orci mollis, eu vulputate libero aliquet. Praesent egestas nisi sed purus tincidunt faucibus. Aliquam lobortis orci lacus, sed faucibus augue dapibus vitae. Ut vitae mi sapien. Phasellus a eros justo. Curabitur odio massa, tincidunt nec nibh sit amet</h4>
+          </div>
+      </div>
+  </div>
+  <div class="container carousel_slider">
+      <div class="row">
+          <div class="col-xs-6 col-xs-offset-3 ">
+            <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 600px; height: 300px; overflow: hidden; visibility: hidden;">
+                    <!-- Loading Screen -->
+                    <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
+                        <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+                        <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
+                    </div>
+                    <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 600px; height: 300px; ">
+                        <div data-p="112.50" style="display: none;">
+                            <img data-u="image" src="img/01.jpg" />
+                        </div>
+                        <div data-p="112.50" style="display: none;">
+                            <img data-u="image" src="img/02.jpg" />
+                        </div>
+                        <div data-p="112.50" style="display: none;">
+                            <img data-u="image" src="img/03.jpg" />
+                        </div>
+                        <div data-p="112.50" style="display: none;">
+                            <img data-u="image" src="img/04.jpg" />
+                        </div>
+                    </div>
+                    <!-- Bullet Navigator -->
+                    <div data-u="navigator" class="jssorb01" style="bottom:16px;right:16px;">
+                        <div data-u="prototype" style="width:12px;height:12px;"></div>
+                    </div>
+                    <!-- Arrow Navigator -->
+                    <span data-u="arrowleft" class="jssora05l" style="top:0px;left:8px;width:40px;height:40px;" data-autocenter="2"></span>
+                    <span data-u="arrowright" class="jssora05r" style="top:0px;right:8px;width:40px;height:40px;" data-autocenter="2"></span>
+                    <a href="http://www.jssor.com" style="display:none">Slideshow Maker</a>
+                </div>
+                <script>
+                    jssor_1_slider_init();
+                </script>
+          </div>
+      </div>
+  </div>
+</section>
+<section>
+  <div class="container-fluid room_types" align="center">
+      <div class="row">
+          <div class="col-xs-3 col-xs-offset-2 room_types_img" align="center">
+            <img src="img/room_types_img.jpg" style="max-width: 100%; height: auto;"><br/>
+            <h3 class="room_types_header">Standard Double Room</h3>
+            <h5 class="room_types_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent scelerisque lectus vitae dui sollicitudin commodo.</h5>
+            <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star"></span>
+          </div>
+        <div class="col-xs-3  room_types_img" align="center">
+                   <img src="img/room_types_img.jpg" style="max-width: 100%; height: auto;"><br/>
+                   <h3 class="room_types_header">Standard Double Room</h3>
+                   <h5 class="room_types_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent scelerisque lectus vitae dui sollicitudin commodo.</h5>
+                   <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span>
+                   <span class="glyphicon glyphicon-star"></span>
+                 </div>
+        <div class="col-xs-3  room_types_img" align="center">
+                   <img src="img/room_types_img.jpg" style="max-width: 100%; height: auto;"><br/>
+                   <h3 class="room_types_header">Standard Double Room</h3>
+                   <h5 class="room_types_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent scelerisque lectus vitae dui sollicitudin commodo.</h5>
+                   <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span>
+                   <span class="glyphicon glyphicon-star"></span>
+                 </div>
+      </div>
+    <div class="row">
+              <div class="col-xs-3 col-xs-offset-2 room_types_img" align="center">
+                <img src="img/room_types_img.jpg" style="max-width: 100%; height: auto;"><br/>
+                <h3 class="room_types_header">Standard Double Room</h3>
+                <h5 class="room_types_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent scelerisque lectus vitae dui sollicitudin commodo.</h5>
+                <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+              </div>
+            <div class="col-xs-3  room_types_img" align="center">
+                       <img src="img/room_types_img.jpg" style="max-width: 100%; height: auto;"><br/>
+                       <h3 class="room_types_header">Standard Double Room</h3>
+                       <h5 class="room_types_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent scelerisque lectus vitae dui sollicitudin commodo.</h5>
+                       <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span>
+                       <span class="glyphicon glyphicon-star"></span>
+                     </div>
+            <div class="col-xs-3  room_types_img" align="center">
+                       <img src="img/room_types_img.jpg" style="max-width: 100%; height: auto;"><br/>
+                       <h3 class="room_types_header">Standard Double Room</h3>
+                       <h5 class="room_types_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent scelerisque lectus vitae dui sollicitudin commodo.</h5>
+                       <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span>
+                       <span class="glyphicon glyphicon-star"></span>
+                     </div>
+          </div>
+    <div class="row">
+            <div class="col-xs-12 room_types_footer">
+              <h1 class="room_types_footer_header">143 Cities Located World Wide</h1>
+            </div>
+        </div>
+
+      </div>
+    </div>
+
+</section>
+  <footer>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-3">
+          <h2 class="footer_header">ABOUT THIS HOTEL</h2>
+          <h4 class="footer_text">Suspendisse erat mi, tincidunt sit amet massa quis, commodo fermentum diam. Sed nec dui nec nunc tempor interdum.
+           Ut vulputate augue urna, ut porta dolor imperdiet a. Vestibulum nec leo eu magna aliquam ornare.</h4>
+        </div>
+      <div class="col-xs-2">
+        <h2 class="footer_header">LATEST NEWS</h2>
+        <h4 class="footer_text">Suspendisse erat mi</h4>
+        <h4 class="footer_text">Suspendisse erat mi</h4>
+        <h4 class="footer_text">Suspendisse erat mi</h4>
+        <h4 class="footer_text">Suspendisse erat mi</h4>
+        <h4 class="footer_text">Suspendisse erat mi</h4>
+      </div>
+      <div class="col-xs-4">
+        <h2 class="footer_header">JOIN DELUX HOTELS</h2>
+        <h4 class="footer_text" >Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus vestibulum blandit egestas. Nam id lectus vel orci luctus consectetur eget id elit. In tortor odio, pellentesque eu arcu sit amet, lacinia euismod nisi. Aliquam sodales tristique mauris ac fermentum. Donec vel varius ipsum. Pellentesque vitae mollis massa.There is no costs or whatsoever so sign up today!</h4>
+        <span class="btn btn-success">Read More</span>
+      </div>
+      <div class="col-xs-3">
+        <h2 class="footer_header">MEMBERS AREA</h2>
+        <label class="footer_label">Username</label><br/>
+        <input type="text" class="input_footer"><br/>
+        <label class="footer_label">Password</label><br/>
+        <input type="text" class="input_footer"><br/>
+        <span class="btn btn-success">Login</span><br/>
+
+      </div>
+    </div>
+</div>
+  </footer>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
